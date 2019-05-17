@@ -14,12 +14,12 @@ ARG Rubygems_FOL=rubygems-3.0.3
 ARG Kubectl=kubectl-linux-amd64-1.13.5
 ARG PKSCLI=pks-linux-amd64-1.4.0-build.194
 ARG BOSHCLI=bosh-cli-5.5.0-linux-amd64
-#Copy MarkLogic RPM to to image
+#Copy RPM to Image
 
 COPY ${Kubectl} ${PKSCLI} ${Rubygems} ${BOSHCLI} /tmp/
 
 #Copy Files when needed
-#COPY mlconfig.sh /opt
+
 # Set file permissions of configuration scripts
 RUN cd /tmp && \
     tar -xzf ${Rubygems}
